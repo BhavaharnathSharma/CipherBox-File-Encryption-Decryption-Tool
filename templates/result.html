@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result | FortiFile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-slate-200 min-h-screen flex items-center justify-center">
+  <div class="bg-white max-w-lg w-full p-10 rounded-3xl shadow-2xl text-center">
+    {% if download_link %}
+      <h2 class="text-3xl font-bold text-green-600 mb-4">✅ Success!</h2>
+      <p class="text-gray-700 mb-4">Your file has been processed successfully.</p>
+      <p class="text-gray-600 mb-6">Algorithm Used: <span class="font-semibold">{{ algorithm }}</span></p>
+      <a href="{{ download_link }}" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Download Result</a>
+    {% elif error %}
+      <h2 class="text-3xl font-bold text-red-600 mb-4">❌ Error</h2>
+      <p class="text-gray-700 mb-6">{{ error }}</p>
+    {% else %}
+      <p class="text-gray-500 text-lg">No action taken.</p>
+    {% endif %}
+    <div class="mt-6">
+      <a href="/" class="text-indigo-600 hover:underline text-sm">🔙 Go Back</a>
+    </div>
+  </div>
+</body>
+</html>

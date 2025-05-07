@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FortiFile Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-100 to-indigo-100 min-h-screen py-10">
+  <div class="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-2xl">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">🏰 FortiFile Dashboard</h1>
+    <form method="post" action="/process" enctype="multipart/form-data" class="space-y-6">
+      <div>
+        <label class="block text-sm font-semibold">Choose File:</label>
+        <input type="file" name="file" required class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">Key/Password:</label>
+        <input type="text" name="key" required class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">Select Algorithm:</label>
+        <select name="algorithm" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          <option value="AES">AES</option>
+          <option value="ChaCha20">ChaCha20</option>
+          <option value="Serpent">Serpent</option>
+          <option value="Salsa20">Salsa20</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold">Choose Action:</label>
+        <select name="action" class="mt-1 w-full rounded-lg border-gray-300 px-4 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          <option value="encrypt">Encrypt</option>
+          <option value="decrypt">Decrypt</option>
+        </select>
+      </div>
+      <div class="text-center pt-4">
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-8 rounded-lg shadow-md transition duration-300">Submit</button>
+      </div>
+    </form>
+    <div class="mt-6 text-center">
+      <a href="/logout" class="text-red-500 hover:underline text-sm">Logout</a>
+    </div>
+  </div>
+</body>
+</html>
